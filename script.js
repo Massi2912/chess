@@ -193,7 +193,7 @@ function botMove(s, lvl) {
   let best = null, ba = -Infinity;
   for (const m of lg) {
     // Zufallskomponente: Bot wählt nicht immer den besten Zug
-    const v = -search(mk(s,m), d-1, -Infinity, hard ? -ba : Infinity, hard, hard) + Math.random()*(hard ? 25 : 150);
+    const v = -search(mk(s,m), d-1, -Infinity, Infinity, hard, hard) + Math.random()*(hard ? 25 : 150);
     if (v > ba) { ba = v; best = m; }
   }
   return best;
